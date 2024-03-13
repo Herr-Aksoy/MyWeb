@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>My Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="{{ url_for('static', filename='images/logo3.jpg') }}" alt="logo" />
+      </a>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}" class="{{ 'active' if request.path == '/' else '' }}">Home</a>
+        <a href="{{ url_for('about') }}" class="{{ 'active' if request.path == '/about' else '' }}">About</a>             
+        <a href="{{ url_for('menu') }}" class="{{ 'active' if request.path == '/menu' else '' }}">Menu</a>
+        <a href="{{ url_for('products') }}" class="{{ 'active' if request.path == '/products' else '' }}">Products</a>
+        <!-- Diğer linkler buraya eklenecek -->
+      </nav>
+
+      <div class="share">
+            <a href="#" class="fab fa-linkedin" onmouseover="showInfo('LinkedIn')" onmouseout="hideInfo()" onclick="redirectTo('https://www.linkedin.com/in/aksoy-ahmet/')"></a>
+            <a href="#" class="fab fa-xing" onmouseover="showInfo('Xing')" onmouseout="hideInfo()" onclick="redirectTo('https://www.xing.com/profile/Ahmet_Aksoy68/web_profiles')"></a>
+            <a href="#" class="fab fa-github" onmouseover="showInfo('GitHub')" onmouseout="hideInfo()" onclick="redirectTo('https://github.com/Herr-Aksoy')"></a>
+      </div>
+      <div id="infoBox" class="info-box"></div>
+    </header>
+
+    <section class="cv">
+        <header>
+            <img src="{{ url_for('static', filename='images/my_photo.jpg') }}" alt="My Photo" class="photo">
+            <h1>Your Name</h1>
+            <p>Web Developer</p>
+        </header>
+
+        <div class="section">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: your.email@example.com</li>
+                <li>Phone: (555) 123-4567</li>
+                <li>Address: Your Address, City, Country</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>University Name</h3>
+                    <p>Degree in Computer Science - Graduation Year</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <h3>Company Name</h3>
+                    <p>Position - Employment Period</p>
+                    <p>Responsibilities and achievements...</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <!-- Diğer yetenekler buraya eklenecek -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Diğer seksiyonlar ve bilgiler buraya eklenecek -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- JavaScript dosyanızın yolu -->
+</body>
+
+</html>

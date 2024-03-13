@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>MY Web Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <style>
+        .home {
+            min-height: 100vh;
+            background: url("{{ url_for('static', filename='images/kisiselweb.jpg') }}") no-repeat;
+            /* background-size: cover; */
+            background-size: 100% 100%;  /* Resmi tamamen kaplaması için */
+            background-position: center;
+            margin-top: -14.5rem;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="{{ url_for('static', filename='images/logo2.jpg') }}" alt="logo" />
+      </a>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}" class="{{ 'active' if request.path == '/' else '' }}">Home</a>
+        <a href="{{ url_for('about') }}" class="{{ 'active' if request.path == '/about' else '' }}">About</a>             
+        <a href="{{ url_for('menu') }}" class="{{ 'active' if request.path == '/menu' else '' }}">Menu</a>
+        <a href="{{ url_for('products') }}" class="{{ 'active' if request.path == '/products' else '' }}">Products</a>
+        <!-- Diğer linkler buraya eklenecek -->
+      </nav>
+
+      <div class="share">
+            <a href="#" class="fab fa-linkedin" onmouseover="showInfo('LinkedIn')" onmouseout="hideInfo()" onclick="redirectTo('https://www.linkedin.com/in/aksoy-ahmet/')"></a>
+            <a href="#" class="fab fa-xing" onmouseover="showInfo('Xing')" onmouseout="hideInfo()" onclick="redirectTo('https://www.xing.com/profile/Ahmet_Aksoy68/web_profiles')"></a>
+            <a href="#" class="fab fa-github" onmouseover="showInfo('GitHub')" onmouseout="hideInfo()" onclick="redirectTo('https://github.com/Herr-Aksoy')"></a>
+      </div>
+      <div id="infoBox" class="info-box"></div>
+
+
+
+
+
+
+                      <!-- Bu oluyor -->
+
+      <!-- <div class="share">
+        <a href="#" class="fab fa-linkedin" onclick="window.open('https://www.linkedin.com/in/aksoy-ahmet/', '_blank')"></a>
+        <a href="#" class="fab fa-xing" onclick="window.open('https://www.xing.com/profile/Ahmet_Aksoy68/web_profiles', '_blank')"></a>
+        <a href="#" class="fab fa-github" onclick="window.open('https://github.com/Herr-Aksoy', '_blank')"></a>
+      </div> -->
+
+    </header>
+
+        <!-- home section start -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>EXPRESS HOME DELIVERY</h3>
+        <p>
+          Lorem Ipsumasd...a.sd.asd...asd. asdasd asdadasdasdasdadasd
+          dddddddddddadaaaaadadadada
+        </p>
+        <a href="#" class="btn">Order Now</a>
+      </div>
+    </section>
+    <!-- home section end -->
+
+
+        <!-- menu section start -->
+    <section class="menu" id="menu">
+      <h1 class="heading">My <span>Profile</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <div class="box-head">
+            <img src="{{ url_for('static', filename='images/menu-1.png') }}" alt="MyProfil" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-head">
+            <h3>5 Mini Bugers</h3>
+            <p>asdasd asd asd asd asd  ad as asd 
+              asda asd asd asd  asd asd as das asd ad 
+               asd asd asd a as dad
+               ad asd asdasd ad asd asd  as dasd 
+            </p>
+            <p>asdasd asd asd asd asd  ad as asd 
+              asda asd asd asd  asd asd as das asd ad 
+               asd asd asd a as dad
+               ad asd asdasd ad asd asd  as dasd 
+            </p>
+            <p>asdasd asd asd asd asd  ad as asd 
+              asda asd asd asd  asd asd as das asd ad 
+               asd asd asd a as dad
+               ad asd asdasd ad asd asd  as dasd 
+            </p>
+          </div>
+          <div class="box-bottom">        <!-- menu kismindaki putonlar olusturuyor -->
+            <a href="#" class="btn">WEITERMACHEN</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- menu section end -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <body>
+</html>
+
+
+
+
+
+

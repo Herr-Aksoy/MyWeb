@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --main-color: #e84242;
+  --black-color: #1b1a1a; /*  Sayfanin asagi yukari kaydirma cubugu rengi */
+  --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;            
+}
+
+
+html {
+  font-size: 62.5%;                 
+  overflow-x: hidden;              
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{            
+    width: 0.8rem;                  
+    background-color: white;
+}
+
+html::-webkit-scrollbar-track{          
+    background-color: transparent;      
+}
+
+html::-webkit-scrollbar-thumb{      
+    border-radius: 3rem;
+    background-color: var(--black-color);
+}
+
+
+body {
+  background-color: var(--main-color);     
+}
+
+section{                            
+    padding: 3.5rem 7%;
+}
+
+a {                                 
+    color: var(--black-color);
+    text-decoration: none;          
+}
+
+
+.btn {                              
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3.75rem;          
+    border-radius: 30rem;           
+    font-size: 1.7rem;
+    color: #fff;
+    background-color: var(--black-color);
+}
+
+.btn:hover {                     
+    opacity: 0.4;
+}
+
+
+.heading {                          
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-bottom: 3.5rem;              
+    border-bottom: 0.1rem solid #fff;  
+}
+
+.heading span {                     
+    color: var(--black-color);      
+    text-transform: uppercase;
+}
+
+.search-input {
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 1rem;
+    text-transform: none;
+    border-radius: 3rem;
+}
+
+
+.logo img {                     
+  height: 7rem;
+}
+
+/*  header start */
+
+
+.header .logo img {
+  height: 10rem;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  align-items: center;                 
+  justify-content: space-between;       
+  padding:  0 7%;                       
+  margin: 2rem 7%;                  
+  border-radius: 30rem;             
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);   
+  position: sticky;                 
+  top: 0;
+  z-index: 1000;
+}
+
+/* .header:not(.home) {
+  margin-bottom: 15rem; /* Header'ın alt tarafına ekstra 4 rem boşluk 
+} */
+
+
+.header .navbar a {
+    margin: 0 3rem;  /* Aralardaki mesafeyi ayarlar */
+    font-size: 2.3rem;  /* Yazı boyutunu ayarlar */          
+    color: var(--black-color);         
+    border-bottom: 0.1rem solid transparent;   
+
+}
+
+.header .navbar .active,                
+.header .navbar a:hover {
+    border-color: var(--main-color);    
+    padding-bottom: 0.5rem;
+}
+
+.header .buttons button {
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;              
+    background-color: transparent;      
+}
+
+
+.header .share {
+    padding: 2rem 0;   
+}
+
+.header .share a {
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    color: #141313;
+    font-size: 2rem;
+    border: var(--border);
+    border-radius: 50%;  /* Bu özellik daire şeklini sağlar */
+    margin: 0.3rem;
+    display: inline-flex; /* İçerik merkezlenmesini sağlar */
+    justify-content: center; /* İçerik merkezlenmesini sağlar */
+    align-items: center; /* İçerik merkezlenmesini sağlar */
+}
+
+.header .share a:hover {            /*  hover üzerine geldiginde */
+    background-color: var(--main-color);
+}
+
+
+.info-box {
+    display: none; /* Bilgi kutusunu başlangıçta gizle */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #333; /* Bilgi kutusu arka plan rengi */
+    color: #fff; /* Bilgi kutusu metin rengi */
+    padding: 10px; /* Bilgi kutusu iç boşluğu */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    z-index: 1000;
+}
+
+/*  header end */
+
+
+/*  home start */
+
+/* .home {                      Burada url_or döngüsü kullanilmiyor.Bunu home.html yerlestirdim.
+    min-height: 100vh;
+    background: url("{{ url_for('static', filename='images/home.jpg') }}") no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -14.5rem;
+    display: flex;
+    align-items: center;
+} */
+
+
+.home .content {
+    max-width: 60rem;               /*  Belli bir sinirlamaya sokuyor */
+}
+
+.home .content h3 {
+    font-size: 6rem;                /*  Icerisindeki yazi boyutu */
+    color: #fff;   
+}
+
+.home .content p {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8rem;
+    padding: 1rem 0;
+    color: #ccc;
+}
+
+/*  home end */
+
+
+
+
+ /* My Profil start */
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));  /*  Resimleri yan yana getirdir */
+    gap: 1.5rem;                        /*  Resimleri arasindaki mesafe */
+}
+
+.menu .box-container .box {               /*  Burasi komple oraya bir düzen veriyor  */
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 3rem;
+    background-color: #fff;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.menu .box-container .box img {
+    width: 100%;                                        /*  Resimleri boyutlarini sinirlandirdi */
+    object-fit: cover;
+}
+
+.menu .box-container .box h3 {              /*  Buda yazi boyutu */
+    font-size: 3rem;
+    padding: 1rem 0;        /*  Sagdan soldan bir mesafe diger taraflardan yok. */
+}
+
+.menu .box  p {            /*  Bölümdeki p kismi */ 
+    font-size: 1.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;                 /*  Bölümdeki paragraf bosluklari sanirim */
+}
+
+
+/*  about start */
+.about {                       /*   ARadaki mesafe icin yaptim */
+  margin-top: 0;
+}
+
+
+
+.about .row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;       /*  Yazi ile image arasina bosluk koyuyor */
+}
+
+.about .row .image {            /*  bu kapsayicisi dedi sanki */ 
+    flex: 1 1 45rem;
+}
+
+.about .row img {
+    width: 100%;
+}
+
+.about .row .content {            /*  bu kapsayicisi dedi sanki */ 
+    flex: 1 1 45rem;
+}
+
+.about .row .content h3 {            /*  Bölümdeki h3 kismi */ 
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p {            /*  Bölümdeki p kismi */ 
+    font-size: 1.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;                 /*  Bölümdeki paragraf bosluklari sanirim */
+}
+/*  about end */
+
+
+/* menu.html  CV start */
+.cv {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.cv header {
+    text-align: center;
+}
+
+.cv header h1 {
+    margin: 0;
+}
+
+.cv header p {
+    margin: 0;
+    color: #6c757d;
+}
+
+.cv .section {
+    margin-top: 2rem;
+}
+
+.cv h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.cv ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cv li {
+    margin-bottom: 0.5rem;
+}
+
+/* menu.html  CV end */
